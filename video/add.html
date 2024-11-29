@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
@@ -15,6 +16,10 @@
   <input type="text" id="code" name="code" value=""><br>
   <label for="title">Title:</label><br>
   <input type="text" id="title" name="title" value=""><br><br>
+  <label for="description">Description:</label><br>
+  <label for="description"></label><input type="text" id="description" name="description" value=""><br>
+  <label for="duration">Duration:</label><br>
+  <label for="duration"></label><input type="number" step="0.1" id="duration" name="duration" value=""><br><br>
 
   <input type="button" value="Guardar" class="btn btn-primary" onclick="add();">
 </form>
@@ -37,10 +42,14 @@
 
     var code = document.getElementById("code");
     var title = document.getElementById("title");
+    var description = document.getElementById("description");
+    var duration = document.getElementById("duration");
 
     var newVideo = {
       "code": code.value,
-      "title": title.value
+      "title": title.value,
+      "description": description.value,
+      "duration": duration.value,
     }
 
     console.log("Adding video:" + JSON.stringify(newVideo));
